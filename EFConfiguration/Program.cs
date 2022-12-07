@@ -1,13 +1,14 @@
 using Microsoft.Extensions.Options;
+using Milan_EFConfiguration;
 using Milan_EFConfiguration.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services
-    .ConfigureOptions<DatabaseOptionsSetup>()
-    .AddDbContext<DatabaseContext>(
+builder.Services.ConfigureOptions<DatabaseOptionsSetup>();
+
+builder.Services.AddDbContext<DatabaseContext>(
         (serviceProvider, dbContextOptionsBuilder) =>
         {
             var databaseOptions = serviceProvider.GetService<IOptions<DatabaseOptions>>()!.Value;

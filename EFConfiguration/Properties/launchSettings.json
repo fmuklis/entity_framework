@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "Milan_EFConfiguration": {
+    "EFConfiguration": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
